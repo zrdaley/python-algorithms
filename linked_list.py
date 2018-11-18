@@ -12,7 +12,7 @@ class Node:
     self.value = x
 
 class LinkedList:
-  def __init__(self, value):
+  def __init__(self, values):
     self.head = Node(values[0])
     curr = self.head
     for value in values[1:]:
@@ -28,8 +28,11 @@ class LinkedList:
         l += " -> "
       curr = curr.next
     print l
-
   
-values = raw_input("Please enter values to be turned into a linked list:\n").split()
-linked_list = LinkedList(values)
-linked_list.print_list()
+def main():
+  values = raw_input("Please enter values to be turned into a linked list:\n").split()
+  linked_list = LinkedList(values)
+  linked_list.print_list()
+
+if __name__ == "__main__":
+   main()
