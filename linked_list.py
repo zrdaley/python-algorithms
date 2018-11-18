@@ -8,27 +8,28 @@ class Node:
   def append(self, n):
     self.next = n
   
-  def updateValue(self, x):
+  def update_value(self, x):
     self.value = x
 
-
-def printLinkedList(head):
-  l = ""
-  curr = head
-  while curr:
-    l += curr.value
-    if curr.next != None:
-      l += " -> "
-    curr = curr.next
-  print l
+class LinkedList:
+  def __init__(self, value):
+    self.head = Node(values[0])
+    curr = self.head
+    for value in values[1:]:
+      curr.append(Node(value))
+      curr = curr.next
+  
+  def print_list(self):
+    l = ""
+    curr = self.head
+    while curr:
+      l += curr.value
+      if curr.next != None:
+        l += " -> "
+      curr = curr.next
+    print l
 
   
 values = raw_input("Please enter values to be turned into a linked list:\n").split()
-
-head = Node(values[0])
-curr = head
-for value in values[1:]:
-  curr.append(Node(value))
-  curr = curr.next
-
-printLinkedList(head)
+linked_list = LinkedList(values)
+linked_list.print_list()
